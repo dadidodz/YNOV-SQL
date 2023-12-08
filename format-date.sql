@@ -1,3 +1,3 @@
-SELECT employees.FirstName, employees.LastName, CAST(strftime('%Y', employees.HireDate) - strftime('%Y',employees.BirthDate ) AS FLOAT)ApproximateAge
+SELECT employees.FirstName, employees.LastName, strftime('%Y', employees.HireDate) - strftime('%Y',employees.BirthDate ) ApproximateAge
 FROM employees
 ORDER BY ApproximateAge

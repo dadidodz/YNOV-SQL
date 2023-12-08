@@ -1,3 +1,3 @@
-SELECT employees.FirstName, employees.LastName, - strftime('%Y',employees.BirthDate ) + strftime('%Y', employees.HireDate)  ApproximateAge
+SELECT employees.FirstName, employees.LastName
 FROM employees
 ORDER BY ApproximateAge

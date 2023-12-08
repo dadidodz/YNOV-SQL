@@ -1,6 +1,4 @@
-SELECT albums.Title as AlbumsName, artists.Name as ArtistName
+SELECT albums.Title AS AlbumName, artists.Name AS ArtistName
 FROM albums
-INNER JOIN artists
-WHERE artists.ArtistId = albums.ArtistId
-ORDER BY ArtistName ASC
-LIMIT 100
+JOIN artists ON albums.ArtistId = artists.ArtistId
+LIMIT 100;

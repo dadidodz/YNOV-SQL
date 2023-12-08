@@ -1,3 +1,3 @@
-SELECT employees.FirstName, employees.LastName, strftime('%Y', employees.HireDate) - strftime('%Y',employees.BirthDate ) ApproximateAge
+SELECT employees.EmployeeId, employees.LastName, employees.FirstName, strftime('%d/%m/%Y', employees.HireDate) HireFrenchDate
 FROM employees
-ORDER BY ApproximateAge
+ORDER BY datetime(HireDate, '') ASC;

@@ -1,3 +1,3 @@
-SELECT employees.FirstName, employees.LastName,CAST((julianday(employees.HireDate) - julianday(employees.BirthDate)) / 365.25 AS INT) ApproximateAge
+SELECT employees.FirstName, employees.LastName, - strftime('%Y',employees.BirthDate ) + strftime('%Y', employees.HireDate)  ApproximateAge
 FROM employees
-ORDER BY ApproximateAge ASC
+ORDER BY ApproximateAge

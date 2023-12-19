@@ -1,4 +1,4 @@
-SELECT albums.AlbumId, artists.ArtistId ,g.Name
+SELECT albums.AlbumId, artists.ArtistId ,g.Name Title
 FROM genres g
 JOIN tracks ON g.GenreId = tracks.GenreId
 JOIN albums ON tracks.AlbumId = albums.AlbumId

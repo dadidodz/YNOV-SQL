@@ -1,4 +1,4 @@
-SELECT DISTINCT Name, count(albums.ArtistId) NbAlbums,
+SELECT Name, count(albums.ArtistId) NbAlbums,
     CASE
         WHEN count(albums.ArtistId) = 1 THEN 'Unproductive'
         WHEN count(albums.ArtistId) > 1 AND count(albums.ArtistId) < 10 THEN 'Productive'
@@ -6,5 +6,5 @@ SELECT DISTINCT Name, count(albums.ArtistId) NbAlbums,
     END AS "IsProductive"
 FROM artists
 JOIN albums ON artists.ArtistId = albums.ArtistId
-GROUP BY Name
+GROUP BY albums.ArtistId
 LIMIT 100

@@ -1,4 +1,4 @@
-SELECT DISTINCT Name, count(albums.ArtistId) nbAlbums,
+SELECT DISTINCT Name, count(albums.ArtistId) NbAlbums,
     CASE
         WHEN count(albums.ArtistId) = 1 THEN 'Unproductive'
         WHEN count(albums.ArtistId) > 1 AND count(albums.ArtistId) < 10 THEN 'Productive'

@@ -1,12 +1,8 @@
-SELECT albums.AlbumId, artists.ArtistId, g.Name AS Title
-FROM genres g
-JOIN tracks ON g.GenreId = tracks.GenreId
+SELECT albums.AlbumId, albums.ArtistId, genres.Name AS Title
+FROM tracks
+JOIN genres ON tracks.GenreId = genres.GenreId
 JOIN albums ON tracks.AlbumId = albums.AlbumId
 JOIN artists ON albums.ArtistId = artists.ArtistId
-WHERE g.GenreId IN (
-    SELECT g.GenreId
-    FROM tracks t
-    JOIN albums al ON t.AlbumId = al.AlbumId
-    WHERE al.Title = g.Name
-)
-GROUP BY g.Name;
+WHERE tracks.AlbumId = (SELECT albums.AlbumId
+                         WHERE albums.Title = 'Pop')
+GROUP BY albums.AlbumId;

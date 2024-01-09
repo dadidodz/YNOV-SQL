@@ -1,4 +1,4 @@
-SELECT e.FirstName || ' ' || e.LastName AS '3rd best seller'
+SELECT e.LastName || ' ' || e.FirstName AS '3rd best seller'
 FROM customers c
 JOIN employees e ON c.SupportRepId = e.EmployeeId
 JOIN invoices i ON c.CustomerId = i.CustomerId
